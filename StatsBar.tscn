@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vhqa04f4khd4"]
+[gd_scene load_steps=2 format=3 uid="uid://vhqa04f4khd4"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/StatsBar.gd" id="1_68gd6"]
 
 [node name="StatsBar" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_68gd6")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
@@ -28,6 +31,7 @@ text = "HP
 STA"
 
 [node name="HP" type="ProgressBar" parent="Panel/Label"]
+unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
@@ -46,6 +50,7 @@ allow_lesser = true
 show_percentage = false
 
 [node name="STA" type="ProgressBar" parent="Panel/Label"]
+unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4

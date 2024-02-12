@@ -14,11 +14,14 @@ var MyStatsBar : StatsBar
 func Update() :
 	pass
 
-func _process(delta):
-	MyStatsBar.UpdateStats()
+#func _process(delta):
+#	MyStatsBar.UpdateStats()
 
 func _ready():
-	MyStatsBar = $Sprite3D/SubViewport/StatsBar
+	MyStatsBar = %StatsBar
+	MyStatsBar.ClaimBar(self)
+	print(MyStatsBar)
+	MyStatsBar.UpdateStats()
 
 ## Called when it is this charaters's turn
 func turn() :

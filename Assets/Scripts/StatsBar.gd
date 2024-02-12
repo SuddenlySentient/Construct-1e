@@ -6,16 +6,14 @@ var MyCharater : Charater
 var HPMeter : ProgressBar
 var STAMeter : ProgressBar
 
-func _init() :
-	MyCharater = $"../../.."
+func ClaimBar(claimer : Charater):
+	MyCharater = claimer
 	print(MyCharater)
-	HPMeter = $Panel/Label/HP
-	STAMeter = $Panel/Label/STA
+	HPMeter = %HP
+	STAMeter = %STA
 
 func UpdateStats() :
 	HPMeter.set_max(MyCharater.MaxHP)
 	HPMeter.set_value(MyCharater.HP)
-	
 	STAMeter.set_max(MyCharater.MaxSTA)
 	STAMeter.set_value(MyCharater.STA)
-	print("Test")
