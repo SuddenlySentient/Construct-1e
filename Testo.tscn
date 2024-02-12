@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7qi42ns3qb1v"]
+
+[ext_resource type="PackedScene" uid="uid://vhqa04f4khd4" path="res://StatsBar.tscn" id="1_erv6d"]
+[ext_resource type="Script" path="res://Assets/Scripts/Charater.gd" id="1_xildh"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ak4j7"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="BoxMesh" id="BoxMesh_23xad"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_xildh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+double_sided = false
+texture_filter = 0
+texture = SubResource("ViewportTexture_ak4j7")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+size = Vector2i(128, 64)
+
+[node name="StatsBar" parent="Sprite3D/SubViewport" instance=ExtResource("1_erv6d")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_23xad")
