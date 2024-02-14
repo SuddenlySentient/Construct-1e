@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 class_name Charater
 
@@ -11,18 +11,24 @@ var token : int = 0
 
 var MyStatsBar : StatsBar
 
-func Update() :
-	pass
-
 #func _process(delta):
 #	MyStatsBar.UpdateStats()
 
 func _ready():
 	MyStatsBar = %StatsBar
+	#print("Claiming ", MyStatsBar)
 	MyStatsBar.ClaimBar(self)
-	print(MyStatsBar)
 	MyStatsBar.UpdateStats()
 
 ## Called when it is this charaters's turn
-func turn() :
+func Turn() :
 	pass
+
+## Called to damage this charater
+func TakeDamage(DMG : int, AP : int, Source : String = "Unknown") :
+	var RealDMG = DMG
+	if (AP < ARM) : 
+		RealDMG -= (ARM - AP)
+		print("Took ", DMG, " DMG with ", AP, " AP from ", Source, ", Recieved ", RealDMG)
+	HP -= RealDMG
+	MyStatsBar.UpdateStats()

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxcslekulpiji"]
+
+[ext_resource type="PackedScene" uid="uid://c7qi42ns3qb1v" path="res://Testo.tscn" id="1_lnuu6"]
+[ext_resource type="PackedScene" uid="uid://cfrnru54s2m0w" path="res://Assets/UI/combat_ui.tscn" id="2_72rsk"]
+
+[node name="BLANK2d" type="Node2D"]
+
+[node name="Charater" parent="." instance=ExtResource("1_lnuu6")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Combat UI" parent="Camera2D" instance=ExtResource("2_72rsk")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 324.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
