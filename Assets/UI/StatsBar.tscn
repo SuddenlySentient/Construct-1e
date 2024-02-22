@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://vhqa04f4khd4"]
+[gd_scene load_steps=7 format=3 uid="uid://vhqa04f4khd4"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/StatsBar.gd" id="1_68gd6"]
+[ext_resource type="Theme" uid="uid://1xlydkf3wdp6" path="res://Assets/UI/CONSTRUCT.tres" id="2_sb55g"]
+[ext_resource type="StyleBox" uid="uid://pmf4mfldq78" path="res://Assets/UI/BarUp.tres" id="3_vinrv"]
+[ext_resource type="StyleBox" uid="uid://bu5p74h6htafs" path="res://Assets/UI/STABar.tres" id="4_0w10j"]
+[ext_resource type="StyleBox" uid="uid://rwi5t2b0gtim" path="res://Assets/UI/HPBar.tres" id="4_4nc02"]
+[ext_resource type="StyleBox" uid="uid://dck1ih62fyt6v" path="res://Assets/UI/BarDown.tres" id="5_f4ce4"]
 
 [node name="StatsBar" type="Control"]
 layout_mode = 3
@@ -14,34 +19,40 @@ script = ExtResource("1_68gd6")
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_right = 128.0
+offset_right = 232.0
 offset_bottom = 64.0
+theme = ExtResource("2_sb55g")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="HPLabel" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -25.0
-offset_right = 44.0
-offset_bottom = 24.0
+offset_left = 6.0
+offset_top = -32.0
+offset_right = 38.0
 grow_vertical = 2
-text = "HP
-STA"
+theme = ExtResource("2_sb55g")
+theme_override_font_sizes/font_size = 32
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HP" type="ProgressBar" parent="Panel/Label"]
+[node name="HPBar" type="ProgressBar" parent="Panel"]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = -20.0
-offset_right = 120.0
+offset_left = 60.0
+offset_top = -28.0
+offset_right = 220.0
 offset_bottom = -4.0
 grow_vertical = 2
+theme = ExtResource("2_sb55g")
+theme_override_styles/background = ExtResource("3_vinrv")
+theme_override_styles/fill = ExtResource("4_4nc02")
 max_value = 12.0
 step = 1.0
 value = 6.0
@@ -49,18 +60,36 @@ rounded = true
 allow_lesser = true
 show_percentage = false
 
-[node name="STA" type="ProgressBar" parent="Panel/Label"]
+[node name="STALabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_right = 54.0
+offset_bottom = 32.0
+grow_vertical = 2
+theme = ExtResource("2_sb55g")
+theme_override_font_sizes/font_size = 32
+text = "STA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="STABar" type="ProgressBar" parent="Panel"]
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = 5.0
-offset_right = 120.0
-offset_bottom = 21.0
+offset_left = 60.0
+offset_top = 4.0
+offset_right = 220.0
+offset_bottom = 28.0
 grow_vertical = 2
+theme = ExtResource("2_sb55g")
+theme_override_styles/background = ExtResource("5_f4ce4")
+theme_override_styles/fill = ExtResource("4_0w10j")
 max_value = 8.0
 step = 1.0
 value = 4.0

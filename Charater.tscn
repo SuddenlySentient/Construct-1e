@@ -12,9 +12,9 @@ texture = ExtResource("2_3pdhb")
 
 [node name="StatsBar" parent="." instance=ExtResource("1_erv6d")]
 unique_name_in_owner = true
-offset_left = -64.0
+offset_left = -120.0
 offset_top = -144.0
-offset_right = -64.0
+offset_right = -120.0
 offset_bottom = -144.0
 
 [editable path="StatsBar"]

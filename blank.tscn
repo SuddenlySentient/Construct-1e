@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxcslekulpiji"]
+[gd_scene load_steps=4 format=3 uid="uid://dxcslekulpiji"]
 
-[ext_resource type="PackedScene" uid="uid://c7qi42ns3qb1v" path="res://Testo.tscn" id="1_fmf21"]
+[ext_resource type="PackedScene" uid="uid://c7qi42ns3qb1v" path="res://Charater.tscn" id="1_fmf21"]
 [ext_resource type="PackedScene" uid="uid://cfrnru54s2m0w" path="res://Assets/UI/CombatUI.tscn" id="2_7ntpg"]
+[ext_resource type="Script" path="res://Camera.gd" id="2_yt7t7"]
 
 [node name="BLANK" type="Node"]
 
@@ -10,8 +11,10 @@ position = Vector2(576, 324)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+script = ExtResource("2_yt7t7")
 
 [node name="Combat UI" parent="Camera2D" instance=ExtResource("2_7ntpg")]
+unique_name_in_owner = true
 offset_top = 324.0
 offset_right = 0.0
 offset_bottom = 324.0

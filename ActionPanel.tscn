@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://des1shb1cc1e6"]
+[gd_scene load_steps=4 format=3 uid="uid://des1shb1cc1e6"]
 
+[ext_resource type="Theme" uid="uid://1xlydkf3wdp6" path="res://Assets/UI/CONSTRUCT.tres" id="1_7v88i"]
 [ext_resource type="PackedScene" uid="uid://fq3x5ja8e0k4" path="res://Assets/UI/ActionTab.tscn" id="1_sl3lq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlup6"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+border_width_top = 8
+border_color = Color(0.25098, 0.25098, 0.25098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_top = 8.0
+anti_aliasing = false
 
 [node name="Action Panel" type="Panel"]
 anchors_preset = 7
@@ -13,6 +25,8 @@ offset_top = -144.0
 offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_7v88i")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlup6")
 
 [node name="Action Container" type="HBoxContainer" parent="."]
 layout_mode = 1

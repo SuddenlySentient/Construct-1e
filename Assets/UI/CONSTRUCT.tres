@@ -1,7 +1,26 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://1xlydkf3wdp6"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://1xlydkf3wdp6"]
 
 [ext_resource type="FontFile" uid="uid://cghs7mcljpjaw" path="res://Assets/UI/FSEX300.ttf" id="1_a470o"]
+[ext_resource type="StyleBox" uid="uid://rwi5t2b0gtim" path="res://Assets/UI/HPBar.tres" id="1_sr8uc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yagx"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq2i4"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
 
 [resource]
 default_font = ExtResource("1_a470o")
 default_font_size = 16
+Panel/styles/panel = SubResource("StyleBoxFlat_5yagx")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_vq2i4")
+ProgressBar/styles/Health = ExtResource("1_sr8uc")

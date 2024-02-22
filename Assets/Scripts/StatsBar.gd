@@ -9,8 +9,8 @@ var STAMeter : ProgressBar
 func ClaimBar(claimer : Charater):
 	MyCharater = claimer
 	#print("Claimed by ", MyCharater)
-	HPMeter = %HP
-	STAMeter = %STA
+	HPMeter = %HPBar
+	STAMeter = %STABar
 
 func UpdateStats() :
 	HPMeter.set_max(MyCharater.MaxHP)
